@@ -55,6 +55,7 @@ function searchDrink() {
   const query = document.getElementById('searchInput').value.toLowerCase().trim();
   const result = drinks.filter(drink => drink.name.toLowerCase().includes(query));
   displayDrinks(result);
+  
 }
 
 function addToGroup(name) {
@@ -106,3 +107,5 @@ function closeModal() {
 window.onload = () => {
   displayDrinks(drinks);
 };
+
+
