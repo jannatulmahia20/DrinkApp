@@ -74,11 +74,20 @@ function updateGroup() {
   list.innerHTML = '';
   group.forEach(drink => {
     const li = document.createElement('li');
-    li.textContent = drink;
+    li.innerHTML = `
+      ${drink}
+      <button onclick="removeFromGroup('${drink}')" style="margin-left: 10px;">❌</button>
+    `;
     list.appendChild(li);
   });
   count.textContent = group.length;
 }
+
+function removeFromGroup(name) {
+  group = group.filter(drink => drink !== name);
+  updateGroup();
+}
+
 
 function showDetails(drink) {
   document.getElementById('modalTitle').textContent = drink.name;
