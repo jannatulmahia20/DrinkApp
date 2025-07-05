@@ -22,7 +22,25 @@ const drinks = [
     image: 'https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg',
     glass: 'Cocktail glass',
     alcoholic: 'Alcoholic'
+  },
+  // New drinks added here
+  {
+    name: 'Pina Colada',
+    category: 'Cocktail',
+    instructions: 'Blend all ingredients with ice until smooth.',
+    image: 'https://www.thecocktaildb.com/images/media/drink/cpf4j51504371346.jpg',
+    glass: 'Hurricane glass',
+    alcoholic: 'Alcoholic'
+  },
+  {
+    name: 'Strawberry Daiquiri',
+    category: 'Cocktail',
+    instructions: 'Blend strawberries, rum, lime juice, and sugar with ice.',
+    image: 'https://www.thecocktaildb.com/images/media/drink/mrz9091589574515.jpg',
+    glass: 'Cocktail glass',
+    alcoholic: 'Alcoholic'
   }
+  
 
   
   
