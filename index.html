@@ -4,10 +4,16 @@
   <meta charset="UTF-8" />
   <title>Drink App</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-  <h2>Welcome to the Drink Page</h2>
+  <div class="header-wrapper">
+    <h2>Welcome to the Drink Page</h2>
+    <button id="darkModeToggle"> Dark Mode 🌙</button>
+  </div>
+  
 
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Search drinks..." />
@@ -20,9 +26,14 @@
 
     
     <div id="groupColumn" class="column">
-      <h3>Selected Drinks (<span id="groupCount">0</span>/7)</h3>
+      <h3 class="selected-header">
+        Selected Drinks 
+        <span id="groupCount" class="selected-count">0</span>
+      </h3>
+      
       <ul id="groupList"></ul>
     </div>
+    
   </div>
 
   <p id="notFoundMessage" style="display:none; color: rgb(21, 81, 185); text-align: center;">Not Found</p>
@@ -41,5 +52,10 @@
   </div>
 
   <script src="script.js"></script>
+
+  <p style="font-size: 12px; text-align: center; margin-top: 40px; color: gray;">
+    This app is for educational and entertainment purposes only. Drink responsibly. Content intended for users of legal drinking age in their country.
+  </p>
+  
 </body>
 </html>

@@ -84,7 +84,9 @@ function addToGroup(name) {
   if (!group.includes(name)) {
     group.push(name);
     updateGroup();
+    showToast(`${name} added to group`);
   }
+
 }
 
 function updateGroup() {
@@ -115,15 +117,55 @@ function showDetails(drink) {
   document.getElementById('modalInstructions').textContent = 'Instructions: ' + drink.instructions;
   document.getElementById('modalGlass').textContent = 'Glass: ' + drink.glass;
   document.getElementById('modalType').textContent = 'Type: ' + drink.alcoholic;
-  document.getElementById('modal').style.display = 'flex';
+
+  const modal = document.getElementById('modal');
+  modal.classList.add('show');  // fade in
 }
 
 function closeModal() {
-  document.getElementById('modal').style.display = 'none';
+  const modal = document.getElementById('modal');
+  modal.classList.remove('show'); // fade out
 }
+
 
 window.onload = () => {
   displayDrinks(drinks);
 };
+
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.textContent = message;
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #198754;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0.95;
+  `;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2000);
+  
+}
+// toggle button dark mode
+const toggleBtn = document.getElementById('darkModeToggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+
+toggleBtn.addEventListener('click', () => {
+  if (document.documentElement.getAttribute('data-theme') === 'dark') {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
 
 
